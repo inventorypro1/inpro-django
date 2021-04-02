@@ -1,0 +1,6 @@
+cd C:\Users\inven\Documents\GitHub\inpro-django\inpro_django
+python manage.py runserver
+
+create a new app:
+python manage.py startapp 'insert name here'
+e.g python manage.py startapp inpro_home
