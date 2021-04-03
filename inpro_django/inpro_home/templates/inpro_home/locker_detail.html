@@ -1,0 +1,29 @@
+{% extends "inpro_home/base.html" %}
+{% block content %}
+<article class = "media content-section">
+    <div class="media-body">
+        <h2>Locker ID: {{ object.id }}</h2>
+        <h3>Locker Name: {{ object.name }}</h3>
+        <h3>Locker Address: {{ object.address }}</h3>
+        <h3>Locker Items:</h3>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Item ID</th>
+                <th scope="col">Item Type Name</th>
+                <th scope="col">Item Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.itemType.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</article>
+{% endblock content %}
