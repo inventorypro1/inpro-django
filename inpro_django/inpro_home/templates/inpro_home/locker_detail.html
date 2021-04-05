@@ -1,5 +1,6 @@
 {% extends "inpro_home/base.html" %}
 {% block content %}
+
 <article class = "media content-section">
     <div class="media-body">
         <h2>Locker ID: {{ object.id }}</h2>
@@ -24,6 +25,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        <a href="{% url 'inpro-home'  %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back to Home</a>
     </div>
 </article>
 {% endblock content %}

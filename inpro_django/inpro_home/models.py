@@ -20,7 +20,9 @@ class ItemType(models.Model):
 
 # Used to store an instance of an ItemType in a locker
 class Item(models.Model):
+    
     itemType = models.ForeignKey(ItemType, on_delete=models.CASCADE)
+    
     locker = models.ForeignKey(Locker, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
 
