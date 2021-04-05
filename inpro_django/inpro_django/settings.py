@@ -31,14 +31,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'inpro_home.apps.InproHomeConfig',
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "bootstrap4",
+
+    # Third party apps
+    'bootstrap4',
+    'crispy_forms',
+
+    # Inpro apps
+    'inpro_home.apps.InproHomeConfig',
+    'inpro_user.apps.InproUserConfig',
 
 ]
 
@@ -121,3 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'inpro_user.User'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'inpro-home'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
